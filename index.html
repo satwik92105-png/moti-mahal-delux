@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Moti Mahal Delux - Premium North Indian Restaurant & Banquet in Patna City. Famous for Biryani, Tandoori dishes, and elegant event hosting.">
+    <title>Moti Mahal Delux | Premium North Indian Restaurant & Banquet</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            /* Color Palette */
+            --bg-dark: hsl(0, 0%, 5%);
+            --bg-surface: hsl(152, 40%, 8%);
+            --bg-surface-light: hsl(152, 35%, 12%);
+            
+            --emerald-dark: hsl(152, 80%, 15%);
+            --emerald: hsl(152, 60%, 25%);
+            --emerald-light: hsl(152, 50%, 35%);
+            
+            --gold: hsl(43, 74%, 55%);
+            --gold-light: hsl(43, 80%, 65%);
+            --gold-dark: hsl(43, 80%, 40%);
+            
+            --text-main: hsl(0, 0%, 95%);
+            --text-muted: hsl(0, 0%, 75%);
+            
+            /* Typography */
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+            
+            /* Effects */
+            --glass-bg: rgba(15, 30, 20, 0.6);
+            --glass-border: rgba(212, 175, 55, 0.2);
+            --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        section {
+            padding: 100px 5%;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Typography Utilities */
+        .section-title {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 4rem;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .highlight {
+            color: var(--gold-light);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            border-radius: 4px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+            color: var(--bg-dark);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+        }
+
+        .btn-outline:hover {
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: var(--transition);
+            background: transparent;
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 20, 15, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 5%;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo i {
+            font-size: 1.4rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--gold);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            text-align: center;
+            padding-top: 80px;
+            background: radial-gradient(circle at center, var(--emerald-dark) 0%, var(--bg-dark) 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23d4af37" fill-opacity="0.05"><path d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/></g></g></svg>');
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            animation: fadeUp 1s ease forwards;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            animation: fadeUp 1s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            animation: fadeUp 1s ease 0.4s forwards;
+            opacity: 0;
+        }
+        
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 8px 16px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(5px);
+            animation: fadeDown 1s ease forwards;
+        }
+        
+        .rating-badge i {
+            color: var(--gold);
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--bg-surface);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            background: linear-gradient(45deg, var(--emerald-dark), var(--bg-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--glass-border);
+        }
+        
+        .about-image::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: 10px;
+            bottom: 10px;
+            border: 2px solid var(--gold);
+            z-index: -1;
+            border-radius: 8px;
+        }
+
+        .about-image i {
+            font-size: 8rem;
+            color: rgba(212, 175, 55, 0.2);
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* Services & Specialties */
+        .services {
+            background-color: var(--bg-dark);
+            position: relative;
+        }
+        
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
+            background: rgba(20, 40, 25, 0.8);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, var(--emerald-light), var(--emerald-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--gold);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+        }
+
+        /* Menu Highlights */
+        .menu {
+            background-color: var(--bg-surface-light);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .menu-category {
+            margin-bottom: 20px;
+        }
+
+        .menu-category-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed rgba(212, 175, 55, 0.3);
+            display: inline-block;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 20px;
+        }
+
+        .menu-item-info {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+        
+        .menu-item-header .dots {
+            flex-grow: 1;
+            border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+            margin: 0 15px;
+        }
+
+        .menu-item-title {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--text-main);
+        }
+
+        .menu-item-price {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .menu-item-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Banquet Section */
+        .banquet {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="%23050a07"/><path d="M50 0L100 50L50 100L0 50Z" fill="%23d4af37" fill-opacity="0.05"/></svg>');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+            border-bottom: 1px solid var(--glass-border);
+        }
+        
+        .banquet-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--glass-bg);
+            padding: 50px;
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(5px);
+        }
+        
+        .banquet h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .banquet p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: var(--text-muted);
+        }
+
+        /* Gallery */
+        .gallery {
+            background-color: var(--bg-dark);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--bg-surface), var(--emerald-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            cursor: pointer;
+        }
+        
+        .gallery-item i {
+            font-size: 3rem;
+            color: rgba(212, 175, 55, 0.3);
+            transition: var(--transition);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 30, 20, 0.8);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-item:hover i {
+            transform: scale(1.1);
+            color: var(--gold);
+        }
+
+        .gallery-overlay span {
+            color: var(--gold);
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover .gallery-overlay span {
+            transform: translateY(0);
+        }
+
+        /* Contact & Location */
+        .contact-section {
+            background-color: var(--bg-surface);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-info-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 40px;
+            height: 100%;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .contact-text h4 {
+            font-family: var(--font-body);
+            color: var(--text-main);
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .contact-text p, .contact-text a {
+            color: var(--text-muted);
+        }
+
+        .contact-text a:hover {
+            color: var(--gold);
+        }
+
+        .map-container {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            height: 100%;
+            min-height: 400px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-dark);
+            padding: 60px 5% 20px;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-col p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--bg-surface);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-main);
+            border: 1px solid var(--glass-border);
+        }
+
+        .social-links a:hover {
+            background: var(--gold);
+            color: var(--bg-dark);
+            transform: translateY(-3px);
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(5deg);
+            background-color: #128c7e;
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .about-grid, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(10, 20, 15, 0.98);
+                flex-direction: column;
+                align-items: center;
+                padding: 30px 0;
+                gap: 20px;
+                clip-path: circle(0 at 50% -20%);
+                transition: all 0.5s ease-out;
+                border-bottom: 1px solid var(--glass-border);
+            }
+
+            .nav-links.active {
+                clip-path: circle(150% at 50% -20%);
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            section {
+                padding: 70px 5%;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="logo">
+            <i class="fa-solid fa-crown"></i> Moti Mahal Delux
+        </a>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-toggle" id="nav-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="rating-badge">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star-half-stroke"></i>
+                <span>4.0 (Demo) Well-known Establishment</span>
+            </div>
+            <h1>A Legacy of Fine <span class="highlight">North Indian</span> Dining</h1>
+            <p>Experience the regal flavors of authentic Biryani, Tandoori delicacies, and impeccable banquet services in the heart of Patna City.</p>
+            <div class="hero-btns">
+                <a href="#menu" class="btn btn-primary">View Menu</a>
+                <a href="#contact" class="btn btn-outline">Book a Table</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container about-grid reveal">
+            <div class="about-image">
+                <i class="fa-solid fa-plate-wheat"></i>
+            </div>
+            <div class="about-text">
+                <h3 class="highlight">Our Story</h3>
+                <h2>Heritage & Culinary Excellence</h2>
+                <p>Located in the historic Patna City, Moti Mahal Delux is synonymous with premium dining and grand celebrations. We bring you the authentic taste of North India, crafted with generations-old recipes and the finest ingredients.</p>
+                <p>From intimate family dinners to grand banquets, our establishment is designed to offer a regal atmosphere. Our signature Tandoori dishes and aromatic Biryanis have made us a beloved culinary landmark in Patna.</p>
+                <br>
+                <a href="#services" class="btn btn-outline">Discover Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title reveal">Our <span class="highlight">Services</span></h2>
+            <p class="section-subtitle reveal">Tailored experiences for every occasion, ensuring memories that last a lifetime.</p>
+            
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h3>Fine Dine-in</h3>
+                    <p>An elegant ambiance perfect for family gatherings, romantic dinners, or business lunches, offering exceptional service.</p>
+                </div>
+                
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-champagne-glasses"></i>
+                    </div>
+                    <h3>Banquet / Party Hall</h3>
+                    <p>Spacious, elegantly decorated halls to host weddings, corporate events, and milestone celebrations with grandeur.</p>
+                </div>
+                
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-bell-concierge"></i>
+                    </div>
+                    <h3>Outdoor Catering</h3>
+                    <p>Bringing our culinary mastery to your chosen venue. Professional catering services tailored to your event's specific needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Highlights Section -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <h2 class="section-title reveal">Signature <span class="highlight">Dishes</span></h2>
+            <p class="section-subtitle reveal">A glimpse into our royal culinary offerings. (Demo Prices)</p>
+            
+            <div class="menu-grid">
+                <!-- Category 1 -->
+                <div class="menu-category reveal">
+                    <h3 class="menu-category-title">Tandoori Delicacies</h3>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header">
+                                <span class="menu-item-title">Murg Malai Tikka</span>
+                                <div class="dots"></div>
+                                <span class="menu-item-price">₹380</span>
+                            </div>
+                            <div class="menu-item-desc">Creamy, melt-in-mouth chicken cooked in clay oven</div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header">
+                                <span class="menu-item-title">Paneer Tikka Shashlik</span>
+                                <div class="dots"></div>
+                                <span class="menu-item-price">₹320</span>
+                            </div>
+                            <div class="menu-item-desc">Cottage cheese chunks marinated in robust spices</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header">
+                                <span class="menu-item-title">Tandoori Raan</span>
+                                <div class="dots"></div>
+                                <span class="menu-item-price">₹850</span>
+                            </div>
+                            <div class="menu-item-desc">Whole leg of lamb, slow-cooked overnight</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Category 2 -->
+                <div class="menu-category reveal">
+                    <h3 class="menu-category-title">Aromatic Biryanis</h3>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header">
+                                <span class="menu-item-title">Hyderabadi Chicken Dum Biryani</span>
+                                <div class="dots"></div>
+                                <span class="menu-item-price">₹420</span>
+                            </div>
+                            <div class="menu-item-desc">Fragrant basmati cooked with marinated chicken and saffron</div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header">
+                                <span class="menu-item-title">Mutton Awadhi Biryani</span>
+                                <div class="dots"></div>
+                                <span class="menu-item-price">₹480</span>
+                            </div>
+                            <div class="menu-item-desc">Tender mutton cooked in traditional Lucknowi style</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header">
+                                <span class="menu-item-title">Subz Dum Biryani</span>
+                                <div class="dots"></div>
+                                <span class="menu-item-price">₹340</span>
+                            </div>
+                            <div class="menu-item-desc">Assorted vegetables layered with long-grain rice</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center" style="text-align: center; margin-top: 40px;">
+                <a href="#contact" class="btn btn-outline reveal">Download Full Menu</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Banquet Highlight CTA -->
+    <section class="banquet reveal">
+        <div class="banquet-content">
+            <h2 class="highlight">Host Your Dream Event</h2>
+            <p>Our majestic banquet halls provide the perfect canvas for weddings, receptions, and corporate gatherings. Impeccable decor, customized menus, and flawless execution.</p>
+            <a href="https://wa.me/917070795435" target="_blank" class="btn btn-primary">Inquire for Booking</a>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title reveal">Our <span class="highlight">Gallery</span></h2>
+            <p class="section-subtitle reveal">A visual journey through our culinary creations and regal ambiance. (Demo Images)</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item reveal">
+                    <i class="fa-solid fa-bowl-rice"></i>
+                    <div class="gallery-overlay">
+                        <span>Signature Biryani</span>
+                    </div>
+                </div>
+                <div class="gallery-item reveal">
+                    <i class="fa-solid fa-drumstick-bite"></i>
+                    <div class="gallery-overlay">
+                        <span>Tandoori Specials</span>
+                    </div>
+                </div>
+                <div class="gallery-item reveal">
+                    <i class="fa-solid fa-martini-glass-empty"></i>
+                    <div class="gallery-overlay">
+                        <span>Banquet Hall</span>
+                    </div>
+                </div>
+                <div class="gallery-item reveal">
+                    <i class="fa-solid fa-couch"></i>
+                    <div class="gallery-overlay">
+                        <span>Elegant Dine-in</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title reveal">Visit <span class="highlight">Us</span></h2>
+            <p class="section-subtitle reveal">We look forward to hosting you at Moti Mahal Delux.</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info-card reveal">
+                    <h3 style="margin-bottom: 30px; font-size: 1.8rem;">Contact Information</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Address</h4>
+                            <p>05 Mahadev Asthan, Patna City,<br>Patna, Bihar 800009</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Phone</h4>
+                            <p><a href="tel:+917070795435">+91 70707 95435</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Hours (Demo)</h4>
+                            <p>Monday - Sunday<br>11:00 AM - 11:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item" style="margin-top: 40px;">
+                        <a href="https://wa.me/917070795435" target="_blank" class="btn btn-primary" style="width: 100%; text-align: center;">
+                            <i class="fa-brands fa-whatsapp" style="margin-right: 8px;"></i> Chat on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="map-container reveal">
+                    <!-- Google Maps Iframe pointing to Patna City -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14392.201479831963!2d85.21639019999999!3d25.5949581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed5f76f7ed73bd%3A0xcda6b0fcbca36f02!2sPatna%20City%2C%20Patna%2C%20Bihar!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="logo" style="font-size: 1.5rem; margin-bottom: 15px;">
+                        <i class="fa-solid fa-crown"></i> Moti Mahal Delux
+                    </h3>
+                    <p>A premier North Indian restaurant and banquet hall in Patna City, offering royal hospitality and exquisite culinary delights.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Banquet & Services</a></li>
+                        <li><a href="#menu">Our Menu</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Specialties</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Tandoori Dishes</a></li>
+                        <li><a href="#">Authentic Biryani</a></li>
+                        <li><a href="#">North Indian Curries</a></li>
+                        <li><a href="#">Corporate Events</a></li>
+                        <li><a href="#">Wedding Banquets</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Moti Mahal Delux. All Rights Reserved. | Created as a demo website.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/917070795435" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+        const navItems = navLinks.querySelectorAll('a');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = navToggle.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when a link is clicked
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = navToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // Scroll Reveal Animation
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveals[i].getBoundingClientRect().top;
+                const elementVisible = 100;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+        window.addEventListener('scroll', reveal);
+        reveal(); // Trigger on load
+
+        // Active Navigation Link Update
+        const sections = document.querySelectorAll('section');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href').substring(1) === current) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
